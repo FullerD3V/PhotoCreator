@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photocreator.Main.MainFXMLController">
+   <children>
+      <BorderPane prefHeight="670.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="337.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="41.0" layoutY="31.0" text="Nombre:" />
+                  <TextField fx:id="txtNombre" layoutX="147.0" layoutY="26.0" onKeyReleased="#txtNombreOnKeyReleased" onKeyTyped="#txtNombreOnKeyTyped" />
+                  <Label layoutX="38.0" layoutY="72.0" text="Fondo" />
+                  <Label layoutX="27.0" layoutY="183.0" text="Opciones" />
+                  <CheckBox fx:id="checkBrillo" layoutX="89.0" layoutY="233.0" mnemonicParsing="false" onAction="#checkBriloOnAction" text="Brillo" />
+                  <Slider fx:id="sliderBrillo" blockIncrement="2.0" layoutX="160.0" layoutY="233.0" majorTickUnit="2.0" max="10.0" minorTickCount="2" onMouseDragged="#sliderBrilloOnMouseDragged" prefHeight="15.0" prefWidth="226.0" showTickLabels="true" />
+                  <Button fx:id="btnVerDiseno" layoutX="26.0" layoutY="295.0" mnemonicParsing="false" onAction="#btnVerDisenoOnAction" prefHeight="26.0" prefWidth="342.0" text="Ver diseño" />
+                  <RadioButton fx:id="radioCirculos" layoutX="118.0" layoutY="118.0" mnemonicParsing="false" onAction="#radioCirculosOnAction" selected="true" text="Círculos">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioRayas" layoutX="241.0" layoutY="118.0" mnemonicParsing="false" onAction="#radioRayasOnAction" text="Rayas" toggleGroup="$radioGroup" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="37.0" layoutY="218.0" text="Dónde te lo enviamos" />
+                  <Button fx:id="btnSiguiente" layoutX="229.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnSiguienteOnAction" prefHeight="26.0" prefWidth="119.0" text="Siguiente" />
+                  <ChoiceBox fx:id="chbox" layoutX="214.0" layoutY="213.0" prefWidth="150.0" />
+                  <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Resources/puntos.png" />
+                     </image></ImageView>
+                  <Label fx:id="lblNombre" layoutX="182.0" layoutY="97.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="199.0" prefHeight="2.0" prefWidth="400.0" />
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="50.0" layoutY="9.0" text="2022-2023 DAM 2 Ronaldo Jiménez" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
