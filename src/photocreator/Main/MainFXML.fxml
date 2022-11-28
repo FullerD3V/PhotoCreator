@@ -48,7 +48,7 @@
                      <image>
                         <Image url="@../Resources/puntos.png" />
                      </image></ImageView>
-                  <Label fx:id="lblNombre" layoutX="182.0" layoutY="97.0">
+                  <Label fx:id="lblNombre" layoutX="182.0" layoutY="97.0" visible="false">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

@@ -20,13 +20,13 @@ public class Aux {
     
     public static String nombreFondo = "círculos", tipoBrillo, recogida;
     
-    public static int precioFondo = 5, precioBrillo, precioRecogida;    
+    public static int precioFondo = 5, precioBrillo, precioRecogida;
     
     public static boolean aplicarDescuento;
     
-    public static void AbrirResumen() throws IOException{ 
+    public static void AbrirResumen() throws IOException{
         Parent root = FXMLLoader.load(photocreator.PhotoCreator.class.getResource("Resumen/ResumenFXML.fxml"));
-                     
+
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Resumen");
@@ -34,8 +34,8 @@ public class Aux {
         stage.setScene(scene);
         stage.show();
     }
-    
-    public static void AbrirDescuento() throws IOException{ 
+
+    public static void AbrirDescuento() throws IOException{
         Parent root = FXMLLoader.load(photocreator.PhotoCreator.class.getResource("Descuento/DescuentoFXML.fxml"));
 
         Scene scene = new Scene(root);
@@ -45,5 +45,17 @@ public class Aux {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-    }    
+    }
+    
+    public static void AbrirPedidos() throws IOException{
+        Parent root = FXMLLoader.load(photocreator.PhotoCreator.class.getResource("Pedidos/PedidosFXML.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Mis pedidos");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

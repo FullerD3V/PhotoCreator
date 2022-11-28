@@ -97,6 +97,7 @@ public class MainFXMLController implements Initializable {
     @FXML
     private void btnVerDisenoOnAction(){
         img.setVisible(true);
+        lblNombre.setVisible(true);
     }
     
     @FXML

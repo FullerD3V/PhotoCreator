@@ -9,9 +9,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -39,7 +43,6 @@ public class ResumenFXMLController implements Initializable {
     @FXML
     private void btnDescuentoOnAction() throws IOException{
         photocreator.Helper.Aux.AbrirDescuento();
-        System.out.println("algo");
         if(photocreator.Helper.Aux.aplicarDescuento == true){
             lblDescuento.setVisible(true);
             tipoDescuento.setVisible(true);
@@ -54,7 +57,11 @@ public class ResumenFXMLController implements Initializable {
     }
     
     @FXML
-    private void btnFinalizarOnAction(){
+    private void btnFinalizarOnAction() throws IOException{
+        photocreator.Helper.Aux.AbrirPedidos();
+        
+        Stage stage = (Stage) btnFinalizar.getScene().getWindow();
+        stage.close();       
     }
     
     @Override
