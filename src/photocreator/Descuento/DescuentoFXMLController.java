@@ -5,6 +5,7 @@
  */
 package photocreator.Descuento;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -27,7 +28,7 @@ public class DescuentoFXMLController implements Initializable {
     private TextField txtDescuento;
     
     @FXML
-    private void btnAceptarOnAction(){
+    private void btnAceptarOnAction() throws IOException{
         if("C10".equals(txtDescuento.getText())){
             photocreator.Helper.Aux.aplicarDescuento = true;
         }
@@ -35,7 +36,6 @@ public class DescuentoFXMLController implements Initializable {
         Stage stage = (Stage) btnAceptar.getScene().getWindow();
         stage.close();
     }
-    
 
     /**
      * Initializes the controller class.

@@ -8,6 +8,7 @@ package photocreator.Resumen;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,26 +24,27 @@ import javafx.stage.Stage;
  * @author alumno
  */
 public class ResumenFXMLController implements Initializable {
-    
+
     @FXML
     private Label nombreFondo,fondoPrecio, brilloPrecio, recogidaPrecio, total,lblDescuento, tipoDescuento; 
-    
+
     @FXML
     private Button btnDescuento, btnFinalizar;
-    
+
     private double precioTotal;
-    
+
     private String fondoNombre = photocreator.Helper.Aux.nombreFondo;
-    
+
     private int precioFondo = photocreator.Helper.Aux.precioFondo;
-    
+
     private int precioBrillo = photocreator.Helper.Aux.precioBrillo;
-    
+
     private int precioRecogida = photocreator.Helper.Aux.precioRecogida;
-    
+
     @FXML
     private void btnDescuentoOnAction() throws IOException{
         photocreator.Helper.Aux.AbrirDescuento();
+        
         if(photocreator.Helper.Aux.aplicarDescuento == true){
             lblDescuento.setVisible(true);
             tipoDescuento.setVisible(true);
@@ -50,12 +52,12 @@ public class ResumenFXMLController implements Initializable {
             total.setText(precioTotal + "€");
         }
     }
-    
+
     @FXML
     private void radioAceptarOnAction(){
         btnFinalizar.setDisable(false);
     }
-    
+
     @FXML
     private void btnFinalizarOnAction() throws IOException{
         photocreator.Helper.Aux.AbrirPedidos();
@@ -63,7 +65,7 @@ public class ResumenFXMLController implements Initializable {
         Stage stage = (Stage) btnFinalizar.getScene().getWindow();
         stage.close();       
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
